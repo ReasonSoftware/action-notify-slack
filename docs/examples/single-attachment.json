@@ -1,0 +1,18 @@
+{
+    "attachments": [
+        {
+            "color": "# #0092fd ",
+            "text": "New Release!",
+            "fields": [
+                {
+                    "title": "Download",
+                    "value": "<https://github.com/ReasonSoftware/action-notify-slack/releases/tag/v1.0.0|v1.0.0>",
+                    "short": false
+                }
+            ],
+            "footer": "<https://github.com/ReasonSoftware/action-notify-slack|ReasonSoftware/action-notify-slack>",
+            "footer_icon": "https://cdn.reasonsecurity.com/images/logo.png",
+            "ts": 1588885167
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "color": "#FBF000",
+        "fields": [
+            {
+                "title": "Repository",
+                "value": "<https://github.com/ReasonSoftware/project-1|project-1>",
+                "short": true
+            },
+            {
+                "title": "Workflow",
+                "value": "<https://github.com/ReasonSoftware/project-1/actions?query=workflow%3Aproduction|production>",
+                "short": true
+            },
+            {
+                "title": "Initiator",
+                "value": "<https://github.com/anton-yurchenko|anton-yurchenko>",
+                "short": true
+            },
+            {
+                "title": "Status",
+                "value": "STARTED",
+                "short": true
+            }
+        ],
+        "footer": "<https://github.com/ReasonSoftware/action-notify-slack|ReasonSoftware/action-notify-slack>",
+        "footer_icon": "https://cdn.reasonsecurity.com/images/logo.png",
+        "ts": 1588885167
+    },
+    {
+        "color": "#777777",
+        "fields": [
+            {
+                "title": "Repository",
+                "value": "<https://github.com/ReasonSoftware/project-2|project-2>",
+                "short": true
+            },
+            {
+                "title": "Workflow",
+                "value": "<https://github.com/ReasonSoftware/project-2/actions?query=workflow%3Aproduction|production>",
+                "short": true
+            },
+            {
+                "title": "Initiator",
+                "value": "<https://github.com/anton-yurchenko|anton-yurchenko>",
+                "short": true
+            },
+            {
+                "title": "Status",
+                "value": "SKIPPED",
+                "short": true
+            }
+        ],
+        "footer": "<https://github.com/ReasonSoftware/action-notify-slack|ReasonSoftware/action-notify-slack>",
+        "footer_icon": "https://cdn.reasonsecurity.com/images/logo.png",
+        "ts": 1588885167
+    }
+]

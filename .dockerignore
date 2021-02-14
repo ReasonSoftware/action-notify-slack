@@ -1,0 +1,13 @@
+.github/
+.circleci/
+.vscode/
+.idea/
+docs/
+examples/
+.gitignore
+.dockerignore
+*.md
+!LICENSE.md
+coverage.txt
+Dockerfile
+Makefile
