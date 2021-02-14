@@ -222,7 +222,7 @@ jobs:
 
 - This action is automatically built at [**Docker Hub**](https://hub.docker.com/r/reasonsoftware/action-notify-slack), and tagged with `latest / v1 / v1.2 / v1.2.3` allowing to lock against a certain version
 *It's recommended to lock against a major version, for example* `v1`
-- Docker image is published both to [**Docker Hub**](https://hub.docker.com/r/reasonsoftware/action-notify-slack) and [**GitHub Packages**](https://github.com/ReasonSoftware/action-notify-slack/packages). If you don't want to rely on **Docker Hub** but still want to use the dockerized action, you may switch from `uses: docker://reasonsoftware/action-notify-slack:v1` to `uses: docker://docker.pkg.github.com/reasonsoftware/action-notify-slack/action-notify-slack:latest:v1`
+- Docker image is published both to [**Docker Hub**](https://hub.docker.com/r/reasonsoftware/action-notify-slack) and [**GitHub Packages**](https://github.com/ReasonSoftware/action-notify-slack/packages). If you don't want to rely on **Docker Hub** but still want to use the dockerized action, you may switch from `uses: docker://reasonsoftware/action-notify-slack:v1` to `uses: docker://docker.pkg.github.com/reasonsoftware/action-notify-slack/action-notify-slack:v1`
 
 ## License
 
