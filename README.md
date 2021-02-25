@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/ReasonSoftware/action-notify-slack)](https://github.com/ReasonSoftware/action-notify-slack/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ReasonSoftware/action-notify-slack)](https://goreportcard.com/report/github.com/ReasonSoftware/action-notify-slack)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ReasonSoftware/action-notify-slack)](https://hub.docker.com/r/reasonsoftware/action-notify-slack)
+[![Docker Pulls](https://img.shields.io/docker/pulls/reasonsoftware/action-notify-slack)](https://hub.docker.com/r/reasonsoftware/action-notify-slack)
 [![License](https://img.shields.io/github/license/ReasonSoftware/action-notify-slack)](LICENSE.md)
 
 A **GitHub Action** for sending notifications as Slack Attachments
