@@ -7,7 +7,7 @@ RUN CGO_ENABLED=0 go build -ldflags="-w -s" -o /opt/action-notify-slack
 
 FROM scratch
 LABEL "repository"="https://github.com/ReasonSoftware/action-notify-slack"
-LABEL "version"="1.0.1"
+LABEL "version"="1.0.2"
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /etc/passwd /etc/passwd
 COPY LICENSE.md /LICENSE.md
