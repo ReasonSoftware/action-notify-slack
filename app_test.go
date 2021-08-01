@@ -8,8 +8,10 @@ import (
 	"testing"
 	"time"
 
-	app "github.com/ReasonSoftware/action-notify-slack"
-	"github.com/ReasonSoftware/action-notify-slack/mocks"
+	app "action-notify-slack"
+
+	"action-notify-slack/mocks"
+
 	"github.com/pkg/errors"
 	"github.com/slack-go/slack"
 	"github.com/stretchr/testify/assert"

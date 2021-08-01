@@ -17,7 +17,7 @@ init:
 	@rm -f go.mod
 	@rm -f go.sum
 	@rm -rf ./vendor
-	@go mod init $$(pwd | awk -F'/' '{print "github.com/"$$(NF-1)"/"$$NF}')
+	@go mod init $$(pwd | awk -F'/' '{print $$NF}')
 
 GO_LINTER := $(GO_BIN_DIR)/golangci-lint
 $(GO_LINTER):

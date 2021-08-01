@@ -6,7 +6,8 @@ import (
 	"os"
 	"testing"
 
-	app "github.com/ReasonSoftware/action-notify-slack"
+	app "action-notify-slack"
+
 	"github.com/slack-go/slack"
 	"github.com/stretchr/testify/assert"
 )
