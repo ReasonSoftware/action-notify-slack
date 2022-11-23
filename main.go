@@ -146,7 +146,7 @@ func main() {
 		}
 	}
 
-	cmd := exec.Command("/bin/sh","-c",fmt.Sprintf("echo \"TIMESTAMP=%s\" >> $GITHUB_OUTPUT",ts))
+    cmd := exec.Command("/bin/sh","-c",fmt.Sprintf("echo \"TIMESTAMP=%s\" >> $GITHUB_OUTPUT",ts))
     cmd.Stdout = os.Stdout
     if err := cmd.Run(); err != nil {
        fmt.Printf("error executing shell command: %v", err.Error())
