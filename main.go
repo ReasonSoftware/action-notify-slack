@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -61,7 +60,7 @@ func GetConfig(args []string) (*Config, error) {
 			return conf, errors.New("error creating timestamp file")
 		}
 
-		t, err := ioutil.ReadFile(os.Getenv("TIMESTAMP_FILE"))
+		t, err := os.ReadFile(os.Getenv("TIMESTAMP_FILE"))
 		if err != nil && strings.Contains(err.Error(), "no such file or directory") {
 			timestamp = ""
 		} else if err != nil {
@@ -139,7 +138,7 @@ func main() {
 	}
 
 	if conf.TimestampFile != "" {
-		err = ioutil.WriteFile(conf.TimestampFile, []byte(ts), 0644)
+		err = os.WriteFile(conf.TimestampFile, []byte(ts), 0644)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)

@@ -2,7 +2,6 @@ package main_test
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -163,7 +162,7 @@ func TestGetConfig(t *testing.T) {
 
 		var file string
 		if test.TimestampFile {
-			dir, err := ioutil.TempDir(".", "unittests")
+			dir, err := os.MkdirTemp(".", "unittests")
 			if err != nil {
 				assert.Equal(nil, err, "preparation: error creating temporary directory")
 			}
@@ -171,7 +170,7 @@ func TestGetConfig(t *testing.T) {
 
 			file = fmt.Sprintf("%s/file", dir)
 
-			err = ioutil.WriteFile(file, []byte(test.Timestamp), 0644)
+			err = os.WriteFile(file, []byte(test.Timestamp), 0644)
 			if err != nil {
 				assert.Equal(nil, err, "preparation: error writing to timestamp file")
 			}

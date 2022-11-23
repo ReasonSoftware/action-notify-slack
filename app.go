@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
@@ -106,7 +105,7 @@ func (s *Slack) SendTemplate(cli Client, fields []slack.AttachmentField) (string
 
 // SendAttachmentFromFile sends an attachment provided via json file
 func (s *Slack) SendAttachmentFromFile(cli Client, filename string, fields []slack.AttachmentField) (string, error) {
-	file, err := ioutil.ReadFile(filename)
+	file, err := os.ReadFile(filename)
 	if err != nil {
 		return "", errors.Wrap(err, fmt.Sprintf("error reading file '%s'", filename))
 	}
