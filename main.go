@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+	"os/exec"
 
 	"github.com/pkg/errors"
 	"github.com/slack-go/slack"
@@ -144,5 +145,11 @@ func main() {
 			os.Exit(1)
 		}
 	}
-	fmt.Printf("::set-output name=TIMESTAMP::%s\n", ts)
+
+	cmd := exec.Command("/bin/sh","-c",fmt.Sprintf("echo \"TIMESTAMP=%s\" >> $GITHUB_OUTPUT",ts))
+    cmd.Stdout = os.Stdout
+    if err := cmd.Run(); err != nil {
+       fmt.Printf("error executing shell command: %v", err.Error())
+       os.Exit(1)
+    }
 }
