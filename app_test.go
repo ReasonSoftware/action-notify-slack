@@ -3,7 +3,6 @@ package main_test
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"testing"
 	"time"
@@ -36,7 +35,7 @@ func init() {
 func TestSendAttachmentFromFile(t *testing.T) {
 	assert := assert.New(t)
 
-	filename, err := ioutil.TempFile(os.TempDir(), "test-")
+	filename, err := os.CreateTemp(os.TempDir(), "test-")
 	assert.Equal(nil, err, "preparation: error creating temporary file")
 	defer os.Remove(filename.Name())
 
@@ -308,7 +307,7 @@ func TestSendAttachmentFromFile(t *testing.T) {
 		assert.Equal(nil, err, "preparation: error opening a temporary file")
 		defer file.Close()
 
-		err = ioutil.WriteFile(filename.Name(), test.Attachment, 0644)
+		err = os.WriteFile(filename.Name(), test.Attachment, 0644)
 		assert.Equal(nil, err, "preparation: error writing json to temporary file")
 
 		m := new(mocks.Client)

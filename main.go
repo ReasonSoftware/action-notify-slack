@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+	"os/exec"
 
 	"github.com/pkg/errors"
 	"github.com/slack-go/slack"
@@ -60,7 +60,7 @@ func GetConfig(args []string) (*Config, error) {
 			return conf, errors.New("error creating timestamp file")
 		}
 
-		t, err := ioutil.ReadFile(os.Getenv("TIMESTAMP_FILE"))
+		t, err := os.ReadFile(os.Getenv("TIMESTAMP_FILE"))
 		if err != nil && strings.Contains(err.Error(), "no such file or directory") {
 			timestamp = ""
 		} else if err != nil {
@@ -138,11 +138,16 @@ func main() {
 	}
 
 	if conf.TimestampFile != "" {
-		err = ioutil.WriteFile(conf.TimestampFile, []byte(ts), 0644)
+		err = os.WriteFile(conf.TimestampFile, []byte(ts), 0644)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
 	}
-	fmt.Printf("::set-output name=TIMESTAMP::%s\n", ts)
+    cmd := exec.Command("/bin/sh","-c",fmt.Sprintf("echo \"TIMESTAMP=%s\" >> $GITHUB_OUTPUT",ts))
+    cmd.Stdout = os.Stdout
+    if err := cmd.Run(); err != nil {
+      fmt.Printf("error executing shell command: %v", err.Error())
+      os.Exit(1)
+      }
 }
