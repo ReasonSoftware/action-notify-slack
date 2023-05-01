@@ -4,7 +4,29 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+    target-branch: master
     assignees:
       - anton-yurchenko
     labels:
       - dependencies
+    ignore:
+      - dependency-name: "*"
+        update-types: [
+          "version-update:semver-patch"
+        ]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: monthly
+    target-branch: master
+    assignees:
+      - anton-yurchenko
+      - Himanshu79B
+      - ihor-kanivets
+    ignore:
+      - dependency-name: "*"
+        update-types: [
+          "version-update:semver-minor",
+          "version-update:semver-patch"
+        ]
